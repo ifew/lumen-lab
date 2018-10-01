@@ -31,9 +31,7 @@ COPY . /app
 # RUN useradd docker
 # USER docker
 # RUN composer install
-RUN apk --no-cache update && \
-    apk --no-cache upgrade && \
-    apk --no-cache add tzdata openntpd
+RUN ln -fs /usr/share/zoneinfo/Asia/Bangkok /etc/localtime && dpkg-reconfigure -f noninteractive tzdata
 
 CMD ["php", "-S", "0.0.0.0:8081", "-t", "public/"]
 EXPOSE 8081
