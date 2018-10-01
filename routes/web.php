@@ -1,7 +1,7 @@
 <?php
 
 $router->get('/', function () use ($router) {
-    return "Hello Lumen Test";
+    return "Hello Lumen Test, And CI/CD";
 });
 
 $router->get('version', function () use ($router) {
